@@ -10,11 +10,8 @@ const eslintConfig = defineConfig([
   {
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'error',
-
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'error',
-
-      'no-undef': 'error',
       'no-var': 'error',
       'no-duplicate-imports': 'error',
       'no-duplicate-case': 'error',
