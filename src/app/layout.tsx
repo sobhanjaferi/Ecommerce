@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { ReactElement } from 'react'
 import '@/styles/globals.css'
 import Header from '@/features/header/Header'
+import TanstackProvider from '@/providers/tanstackProvider'
 
 export const metadata: Metadata = {
   title: 'Ecommerce',
@@ -16,7 +17,9 @@ export default function RootLayout({
       <body className='min-h-full flex flex-col mx-120'>
         <Header />
 
-        <main>{children}</main>
+        <main>
+          <TanstackProvider>{children}</TanstackProvider>
+        </main>
       </body>
     </html>
   )
