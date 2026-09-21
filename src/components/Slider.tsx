@@ -7,7 +7,7 @@ import 'swiper/css/effect-cards'
 import '@/styles/slider.css'
 import { EffectCards } from 'swiper/modules'
 import Image from 'next/image'
-import { SLIDES } from '@/constants/slides'
+import { SLIDES } from '@/constants/slides.constant'
 
 export default function Slider(): ReactElement {
   return (

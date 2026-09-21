@@ -1,7 +1,7 @@
 'use client'
 
-import { NAVLIST } from '@/constants/navList'
-import { ROUTES } from '@/constants/routes'
+import { NAVLIST } from '@/constants/navList.constant'
+import { ROUTES } from '@/constants/routes.constant'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
