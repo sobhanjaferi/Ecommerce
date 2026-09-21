@@ -1,4 +1,4 @@
-import { ProductItem } from '@/types/productItem'
+import { ProductItemType } from '@/types/productItem'
 import { NextResponse } from 'next/server'
 import { v4 } from 'uuid'
 
@@ -12,7 +12,7 @@ import { v4 } from 'uuid'
 //   gallery : []
 // }
 
-const data: ProductItem[] = [
+const data: ProductItemType[] = [
   {
     id: v4(),
     title: 'MacBook Pro (16-inch, 2024)',
