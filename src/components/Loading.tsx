@@ -1,9 +1,17 @@
 import { LoaderCircle } from 'lucide-react'
-import type { ReactElement } from 'react'
+import type { ComponentProps, ReactElement } from 'react'
 
-export default function Loading(): ReactElement {
+type Props = ComponentProps<'div'>
+
+export default function Loading({
+  className,
+  ...otherProps
+}: Props): ReactElement {
   return (
-    <div className='flex justify-center items-center gap-2 bg-gray-200 text-2xl z-50 absolute top-0 bottom-0 right-0 left-0'>
+    <div
+      className={`flex justify-center items-center gap-2 bg-gray-200 text-2xl w-full h-full ${className}`}
+      {...otherProps}
+    >
       <LoaderCircle className='loading' />
 
       <h1>Loading ...</h1>
