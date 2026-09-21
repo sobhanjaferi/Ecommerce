@@ -11,8 +11,8 @@ export default function Header(): ReactElement {
   const pathname = usePathname()
 
   return (
-    <header className='w-full p-4 mb-2 rounded-b-xl flex justify-between gap-20 items-center bg-gray-100 mx-auto shadow-lg shadow-gray-400'>
-      <nav>
+    <header className='flex flex-col gap-5'>
+      <nav className='w-full p-4 rounded-b-xl flex justify-between gap-20 items-center bg-gray-100 mx-auto shadow-lg shadow-gray-400'>
         <ul className='flex justify-between items-center gap-5'>
           {NAVLIST.map((item) => (
             <li
@@ -28,17 +28,17 @@ export default function Header(): ReactElement {
             </li>
           ))}
         </ul>
-      </nav>
 
-      <Link href={ROUTES.HOME}>
-        <Image
-          src='/images/logo.svg'
-          alt='logo'
-          width={1080}
-          height={1080}
-          className='w-8'
-        />
-      </Link>
+        <Link href={ROUTES.HOME}>
+          <Image
+            src='/images/logo.svg'
+            alt='logo'
+            width={1080}
+            height={1080}
+            className='w-8'
+          />
+        </Link>
+      </nav>
     </header>
   )
 }
