@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { ReactElement } from 'react'
 import '@/styles/globals.css'
+import Header from '@/features/header/header'
 
 export const metadata: Metadata = {
   title: 'Ecommerce',
@@ -12,7 +13,11 @@ export default function RootLayout({
 }: LayoutProps<'/'>): ReactElement {
   return (
     <html lang='en'>
-      <body className='min-h-full flex flex-col'>{children}</body>
+      <body className='min-h-full flex flex-col mx-100'>
+        <Header />
+
+        <main>{children}</main>
+      </body>
     </html>
   )
 }
