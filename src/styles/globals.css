@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+.loading {
+    animation-name: LoadingAnimate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes LoadingAnimate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
