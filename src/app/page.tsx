@@ -1,10 +1,13 @@
 import Slider from '@/components/Slider'
+import ProductContainer from '@/features/product/ProductContainer'
 import type { ReactElement } from 'react'
 
 export default function Home(): ReactElement {
   return (
-    <div>
+    <div className='flex flex-col gap-10'>
       <Slider />
+
+      <ProductContainer />
     </div>
   )
 }
