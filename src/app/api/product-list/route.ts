@@ -17,7 +17,7 @@ const data: ProductItemType[] = [
     id: v4(),
     title: 'MacBook Pro (16-inch, 2024)',
     mainImage: 'https://cdn.mos.cms.futurecdn.net/HajFKum5rjNrhyZsekkjfW.jpg',
-    price: 0,
+    price: 2100,
     content: `SUPERCHARGED BY M4 PRO OR M4 MAX — The 16-inch 
     MacBook Pro with the M4 Pro or M4 Max chip gives you outrageous performance 
     in a powerhouse laptop built for Apple Intelligence.* 
@@ -43,7 +43,7 @@ const data: ProductItemType[] = [
     title: 'Lenovo 16” ECO Laptop Backpack',
     mainImage:
       'https://m.media-amazon.com/images/I/61DyiuPm5iL._AC_SL1500_.jpg',
-    price: 0,
+    price: 47,
     content: `Lasting Protection: Elevate your daily commutes with the Lenovo 16” 
     ECO Laptop Backpack B210. Crafted from high-quality water-repellent snow yarn polyester, 
     this backpack showcases both elegance and durability. 
@@ -65,7 +65,7 @@ const data: ProductItemType[] = [
     title: 'Ninja Pods Coffee Maker',
     mainImage:
       'https://m.media-amazon.com/images/I/71fIZcW76ZL._AC_SL1500_.jpg',
-    price: 0,
+    price: 49,
     content: `BREW WITH PODS OR GROUNDS: Brew a single-serve cup of coffee with grounds for ultimate flavor or with a coffee pod for ultimate convenience in one small footprint.
     3 BREW STYLES: Select Classic, Rich, or Over Ice for your grounds or coffee pods.
     ULTIMATE BREW VERSATILITY: Brew a 6, 8, 10, or 12-oz. pod brew or choose from a 6, 8, 10, 12, 18, or 24-oz. grounds brew. Brew more drink options vs. a leading single-serve coffee maker.
