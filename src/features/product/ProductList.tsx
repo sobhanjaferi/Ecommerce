@@ -22,12 +22,7 @@ export default function ProductList({
 
       <div className='grid grid-cols-2 gap-4'>
         {products.map((product) => (
-          <ProductItem
-            key={product.id}
-            mainImage={product.mainImage}
-            title={product.title}
-            price={product.price}
-          />
+          <ProductItem key={product.id} {...product} />
         ))}
       </div>
     </div>
