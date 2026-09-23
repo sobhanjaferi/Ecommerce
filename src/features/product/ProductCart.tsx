@@ -4,7 +4,7 @@ import Button from '@/components/Button'
 import Gallery from '@/components/Gallery'
 import IconButton from '@/components/IconButton'
 import { ProductItemType } from '@/types/productItem'
-import { PlusIcon } from 'lucide-react'
+import { Minus, PlusIcon } from 'lucide-react'
 import { useState, type ReactElement } from 'react'
 
 type Props = Omit<ProductItemType, 'id' | 'mainImage'>
@@ -58,7 +58,7 @@ export default function ProductCart({
             className='w-11 h-10.5 text-red-500 bg-red-100 font-bold text-2xl border-2 rounded-lg'
             onClick={handleDecrease}
           >
-            -
+            <Minus />
           </IconButton>
         </div>
       </div>
