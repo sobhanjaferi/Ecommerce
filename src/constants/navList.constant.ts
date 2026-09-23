@@ -15,8 +15,8 @@ export const NAVLIST: INavItem[] = [
     route: ROUTES.SHOP,
   },
   {
-    title: 'Card',
-    route: ROUTES.CARD,
+    title: 'Cart',
+    route: ROUTES.CART,
   },
   {
     title: 'Login / SignIn',

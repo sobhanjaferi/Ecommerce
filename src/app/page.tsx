@@ -1,5 +1,5 @@
 import Slider from '@/components/Slider'
-import ProductContainer from '@/features/product/ProductContainer'
+import ProductContainer from '@/features/product/ProductListContainer'
 import type { ReactElement } from 'react'
 
 export default function Home(): ReactElement {
