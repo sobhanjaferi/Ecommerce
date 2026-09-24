@@ -3,8 +3,9 @@
 import Loading from '@/components/Loading'
 import { useQueryFetch } from '@/hooks/QueryFetch'
 import { ProductItemType } from '@/types/productItem'
-import type { ReactElement } from 'react'
+import { type ReactElement } from 'react'
 import ProductCart from './ProductCart'
+import { useCounter } from '@/hooks/Counter'
 
 type Props = {
   productId: string
@@ -13,6 +14,8 @@ type Props = {
 export default function ProductCartContainer({
   productId,
 }: Props): ReactElement {
+  const { counter, handleIncrease, handleDecrease } = useCounter()
+
   const { data, error, isError, isLoading } = useQueryFetch<ProductItemType[]>({
     queryKey: ['product-item'],
     url: '/api/product-list',
@@ -27,7 +30,12 @@ export default function ProductCartContainer({
 
   return (
     <div>
-      <ProductCart {...goalProduct} />
+      <ProductCart
+        {...goalProduct}
+        counter={counter}
+        handleDecrease={handleDecrease}
+        handleIncrease={handleIncrease}
+      />
     </div>
   )
 }

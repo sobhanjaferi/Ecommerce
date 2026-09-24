@@ -1,30 +1,25 @@
-'use client'
-
 import Button from '@/components/Button'
 import Gallery from '@/components/Gallery'
 import IconButton from '@/components/IconButton'
 import { ProductItemType } from '@/types/productItem'
 import { Minus, PlusIcon } from 'lucide-react'
-import { useState, type ReactElement } from 'react'
+import { type ReactElement } from 'react'
 
-type Props = Omit<ProductItemType, 'id' | 'mainImage'>
+type Props = Omit<ProductItemType, 'id' | 'mainImage'> & {
+  counter: number
+  handleIncrease: () => void
+  handleDecrease: () => void
+}
 
 export default function ProductCart({
   title,
   content,
   gallery,
   price,
+  counter,
+  handleDecrease,
+  handleIncrease,
 }: Props): ReactElement {
-  const [counter, setCounter] = useState<number>(0)
-
-  const handleIncrease = (): void => {
-    setCounter((old) => old + 1)
-  }
-
-  const handleDecrease = (): void => {
-    setCounter((old) => (old > 0 ? old - 1 : old))
-  }
-
   return (
     <div className='w-full my-10 flex flex-col gap-5'>
       <Gallery gallery={gallery} />
