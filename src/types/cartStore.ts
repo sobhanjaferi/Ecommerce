@@ -1,7 +1,10 @@
-export type CartStoreType = {
-  orders: { id: string; qty: number }[]
+import { ProductItemType } from './productItem'
 
-  handleIncrease: (id: string) => void
+export type CartItemType = ProductItemType & { qty: number }
+export type CartStoreType = {
+  orders: CartItemType[]
+
+  handleIncrease: (order: ProductItemType) => void
   handleDecrease: (id: string) => void
   handleDeleteOrder: (id: string) => void
   handleOrderQty: () => number
