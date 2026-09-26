@@ -2,6 +2,7 @@
 
 import { NAVLIST } from '@/constants/navList.constant'
 import { ROUTES } from '@/constants/routes.constant'
+import { CartStore } from '@/stores/cartStore'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -9,6 +10,7 @@ import type { ReactElement } from 'react'
 
 export default function Navbar(): ReactElement {
   const pathname = usePathname()
+  const totalQty = CartStore((state) => state.handleTotalQty)
 
   return (
     <nav className='w-full p-4 rounded-b-xl flex justify-between gap-15 items-center bg-gray-100 mx-auto shadow-lg shadow-gray-400 border border-gray-300'>
@@ -27,7 +29,7 @@ export default function Navbar(): ReactElement {
 
             {item.title === 'Cart' && (
               <h4 className='w-6 h-6 text-sm flex justify-center items-center rounded-full bg-green-600 text-white font-bold'>
-                0
+                {totalQty()}
               </h4>
             )}
           </li>

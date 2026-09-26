@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 export default function Header(): ReactElement {
   return (
-    <header>
+    <header className='mb-10'>
       <Navbar />
     </header>
   )
