@@ -7,5 +7,6 @@ export type CartStoreType = {
   handleIncrease: (order: ProductItemType) => void
   handleDecrease: (id: string) => void
   handleDeleteOrder: (id: string) => void
-  handleOrderQty: () => number
+  handleOrderQty: (id: string) => number
+  handleTotalQty: () => number
 }
