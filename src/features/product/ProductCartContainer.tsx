@@ -30,7 +30,7 @@ export default function ProductCartContainer({
 
   return (
     <div>
-      <ProductCart product={goalProduct} counter={handleOrderQty()} />
+      <ProductCart product={goalProduct} counter={handleOrderQty(productId)} />
     </div>
   )
 }
