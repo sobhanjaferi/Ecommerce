@@ -27,17 +27,13 @@ export default function OrderItem({
 
       <div className='h-full w-3/5 flex flex-col justify-between py-1'>
         <div className='flex justify-between items-center gap-4'>
-          <span className='w-22 text-sm'>{orderItem.title}</span>
+          <span className='w-3/5  text-sm'>{orderItem.title}</span>
 
           <span>
             price :{' '}
             <strong className='text-green-700 border-b'>
               {orderItem.price}$
             </strong>
-          </span>
-
-          <span>
-            qty : <strong>{orderItem.qty}</strong>
           </span>
         </div>
 
