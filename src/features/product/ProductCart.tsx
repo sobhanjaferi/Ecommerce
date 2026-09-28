@@ -6,10 +6,9 @@ import { type ReactElement } from 'react'
 
 type Props = {
   product: ProductItemType
-  counter: number
 }
 
-export default function ProductCart({ product, counter }: Props): ReactElement {
+export default function ProductCart({ product }: Props): ReactElement {
   return (
     <div className='w-full mb-10 flex flex-col gap-5'>
       <Gallery gallery={product.gallery} />
@@ -26,9 +25,7 @@ export default function ProductCart({ product, counter }: Props): ReactElement {
       <p className='text-gray-600 text-sm'>{product.content}</p>
 
       <div className='w-full flex justify-between items-center'>
-        <Button className='w-50' disabled={counter === 0}>
-          Add to cart
-        </Button>
+        <Button className='w-50'>Add to cart</Button>
 
         <Counter product={product} />
       </div>
