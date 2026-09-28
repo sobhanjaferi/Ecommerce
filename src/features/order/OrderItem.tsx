@@ -8,9 +8,13 @@ import type { ReactElement } from 'react'
 
 type Props = {
   orderItem: CartItemType
+  handleDelete: (id: string) => void
 }
 
-export default function OrderItem({ orderItem }: Props): ReactElement {
+export default function OrderItem({
+  orderItem,
+  handleDelete,
+}: Props): ReactElement {
   return (
     <div className='w-full h-50 p-3 bg-gray-100 border border-gray-600 rounded flex justify-between items-center gap-4'>
       <Image
@@ -38,7 +42,9 @@ export default function OrderItem({ orderItem }: Props): ReactElement {
         </div>
 
         <div className='flex justify-between items-center'>
-          <Button color='gray'>Buy order</Button>
+          <Button color='red' onClick={() => handleDelete(orderItem.id)}>
+            Delete Item
+          </Button>
 
           <Counter product={orderItem} />
         </div>
