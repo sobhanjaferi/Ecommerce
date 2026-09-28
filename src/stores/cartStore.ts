@@ -2,6 +2,7 @@
 
 import { CartStoreType } from '@/types/cartStore'
 import { ProductItemType } from '@/types/productItem'
+import { tr } from 'zod/v4/locales/index.js'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -59,6 +60,6 @@ export const CartStore = create<CartStoreType>()(
         return qty
       },
     }),
-    { name: 'cart-storage' },
+    { name: 'cart-storage', skipHydration: true },
   ),
 )
