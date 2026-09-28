@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react'
-import ProductItem from './ProductItem'
 import { ProductItemType } from '@/types/productItem'
 import Loading from '@/components/Loading'
+import ProductItemContainer from './ProductItemContainer'
 
 type Props = {
   products: ProductItemType[]
@@ -20,11 +20,13 @@ export default function ProductList({
         All Products
       </h2>
 
-      <div className='grid grid-cols-2 gap-4'>
+      <ul className='grid grid-cols-2 gap-4'>
         {products.map((product) => (
-          <ProductItem key={product.id} {...product} />
+          <li key={product.id}>
+            <ProductItemContainer product={product} />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }
