@@ -10,7 +10,9 @@ export default function Counter({
 }: {
   product: ProductItemType
 }): ReactElement {
-  const { handleIncrease, handleDecrease, handleOrderQty } = CartStore()
+  const handleIncrease = CartStore((state) => state.handleIncrease)
+  const handleDecrease = CartStore((state) => state.handleDecrease)
+  const handleOrderQty = CartStore((state) => state.handleOrderQty)
 
   return (
     <div className='flex justify-between items-center gap-5'>
