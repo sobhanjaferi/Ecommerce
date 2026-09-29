@@ -59,6 +59,6 @@ export const CartStore = create<CartStoreType>()(
         return qty
       },
     }),
-    { name: 'cart-storage' },
+    { name: 'cart-storage', partialize: (state) => ({ orders: state.orders }) },
   ),
 )
