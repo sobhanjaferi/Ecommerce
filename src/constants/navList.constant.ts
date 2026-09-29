@@ -15,7 +15,7 @@ export const NAVLIST: INavItem[] = [
     route: ROUTES.CART,
   },
   {
-    title: 'Login / SignIn',
+    title: 'Login',
     route: ROUTES.LOGIN,
   },
   {
