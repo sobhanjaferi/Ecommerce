@@ -3,6 +3,7 @@ import { ReactElement } from 'react'
 import '@/styles/globals.css'
 import Header from '@/features/header/Header'
 import TanstackProvider from '@/providers/tanstackProvider'
+import ToastifyProvider from '@/providers/toastifyProvider'
 
 export const metadata: Metadata = {
   title: 'Ecommerce',
@@ -18,7 +19,9 @@ export default function RootLayout({
         <Header />
 
         <main>
-          <TanstackProvider>{children}</TanstackProvider>
+          <TanstackProvider>
+            <ToastifyProvider>{children}</ToastifyProvider>
+          </TanstackProvider>
         </main>
       </body>
     </html>
