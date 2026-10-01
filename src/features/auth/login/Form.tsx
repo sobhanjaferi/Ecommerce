@@ -1,21 +1,17 @@
-'use client'
-
-import IconButton from '@/components/IconButton'
-import { Eye, EyeClosed } from 'lucide-react'
-import { useState, type ReactElement } from 'react'
+import { FormEvent, type ReactElement } from 'react'
 import FormField from './FormField'
 import Button from '@/components/Button'
+import PasswordField from './PasswordField'
+import Link from 'next/link'
 
-export default function LoginForm(): ReactElement {
-  const [isShowPassword, setIsShowPassword] = useState<boolean>(false)
-
-  const handleClickShowPassword = (): void => {
-    setIsShowPassword(!isShowPassword)
-  }
-
+export default function Form({
+  handleSubmit,
+}: {
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void>
+}): ReactElement {
   return (
     <form
-      method='GET'
+      onSubmit={handleSubmit}
       className='h-full w-full bg-gray-300 rounded-md border border-gray-400 p-4 flex flex-col gap-7'
     >
       <ul className='w-full flex flex-col justify-between gap-7'>
@@ -28,22 +24,7 @@ export default function LoginForm(): ReactElement {
           required
         />
 
-        <FormField
-          label='Password'
-          type={isShowPassword ? 'text' : 'password'}
-          name='password'
-          id='password'
-          placeholder='Password'
-          required
-          className='relative'
-        >
-          <IconButton
-            onClick={handleClickShowPassword}
-            className='absolute right-2 top-9 text-gray-600'
-          >
-            {isShowPassword ? <EyeClosed size={20} /> : <Eye size={20} />}
-          </IconButton>
-        </FormField>
+        <PasswordField name='password' />
 
         <li className='w-full flex justify-between items-center'>
           <div className='flex justify-between items-center gap-1'>
@@ -57,13 +38,19 @@ export default function LoginForm(): ReactElement {
             />
           </div>
 
-          <span className='active:opacity-30 transition-all duration-200 cursor-pointer'>
-            Forget Your Password?
+          <span>
+            you had not account ?{' '}
+            <Link
+              href={'/auth/register'}
+              className='active:opacity-30 transition-all duration-200 text-blue-600 border-b'
+            >
+              register
+            </Link>
           </span>
         </li>
       </ul>
 
-      <Button type='submit' color='gray' className='w-full'>
+      <Button color='gray' className='w-full' type='submit'>
         Login
       </Button>
     </form>
