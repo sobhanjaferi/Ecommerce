@@ -2,7 +2,7 @@
 
 import type { FormEvent, ReactElement } from 'react'
 import { toast } from 'react-toastify'
-import Form from './Form'
+import FormLogin from './Form'
 
 export default function FormContainer(): ReactElement {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
@@ -33,5 +33,5 @@ export default function FormContainer(): ReactElement {
     }
   }
 
-  return <Form handleSubmit={handleSubmit} />
+  return <FormLogin handleSubmit={handleSubmit} />
 }
