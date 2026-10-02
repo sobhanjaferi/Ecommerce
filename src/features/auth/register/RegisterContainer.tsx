@@ -3,8 +3,12 @@
 import type { FormEvent, ReactElement } from 'react'
 import Register from './Register'
 import { toast } from 'react-toastify'
+import { UserStore } from '@/stores/userStore'
 
 export default function RegisterContainer(): ReactElement {
+  const handleSetTrue = UserStore((state) => state.handleSetTrue)
+  const handleSetFalse = UserStore((state) => state.handleSetFalse)
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
 
@@ -23,10 +27,12 @@ export default function RegisterContainer(): ReactElement {
 
       if (!req.ok) {
         toast.error(res.message)
+        handleSetFalse()
         return
       }
 
       toast.success(res.message)
+      handleSetTrue()
     } catch {
       toast.error('Network error. Please try again.')
     }
