@@ -1,7 +1,6 @@
 'use client'
 
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
 
 export type UserStoreType = {
   ISUSEREXISTS: boolean
@@ -9,19 +8,14 @@ export type UserStoreType = {
   handleSetFalse: () => void
 }
 
-export const UserStore = create<UserStoreType>()(
-  persist(
-    (set) => ({
-      ISUSEREXISTS: false,
+export const UserStore = create<UserStoreType>()((set) => ({
+  ISUSEREXISTS: false,
 
-      handleSetTrue: (): void => {
-        set({ ISUSEREXISTS: true })
-      },
+  handleSetTrue: (): void => {
+    set({ ISUSEREXISTS: true })
+  },
 
-      handleSetFalse: (): void => {
-        set({ ISUSEREXISTS: false })
-      },
-    }),
-    { name: 'USEREXISTS', partialize: (state) => state.ISUSEREXISTS },
-  ),
-)
+  handleSetFalse: (): void => {
+    set({ ISUSEREXISTS: false })
+  },
+}))
