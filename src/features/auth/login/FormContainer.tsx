@@ -1,11 +1,13 @@
 'use client'
 
-import { useEffect, useState, type FormEvent, type ReactElement } from 'react'
+import { type FormEvent, type ReactElement } from 'react'
 import { toast } from 'react-toastify'
 import FormLogin from './Form'
+import { UserStore } from '@/stores/userStore'
 
 export default function FormContainer(): ReactElement {
-  const [isLogin, setIsLogin] = useState<boolean>(false)
+  const handleSetTrue = UserStore((state) => state.handleSetTrue)
+  const handleSetFalse = UserStore((state) => state.handleSetFalse)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
@@ -26,20 +28,16 @@ export default function FormContainer(): ReactElement {
 
       if (!req.ok) {
         toast.error(res.message)
-        setIsLogin(false)
+        handleSetFalse()
         return
       }
 
       toast.success(res.message)
-      setIsLogin(true)
+      handleSetTrue()
     } catch {
       toast.error('Network error. Please try again.')
     }
   }
-
-  useEffect(() => {
-    localStorage.setItem('USEREXISTS', JSON.stringify(isLogin))
-  }, [isLogin])
 
   return <FormLogin handleSubmit={handleSubmit} />
 }

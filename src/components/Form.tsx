@@ -1,8 +1,9 @@
-import FormField from '@/features/auth/login/FormField'
-import PasswordField from '@/features/auth/login/PasswordField'
+import FormField from '@/components/FormField'
+import PasswordField from '@/components/PasswordField'
 import Link from 'next/link'
 import type { ComponentProps, ReactElement } from 'react'
 import Button from './Button'
+import { ROUTES } from '@/constants/routes.constant'
 
 type Props = ComponentProps<'form'> & {
   IspasswordExists: boolean
@@ -59,7 +60,7 @@ export default function Form({
             <span>
               {isRegisterForm ? 'you had account' : 'you had not account'}?{' '}
               <Link
-                href={`${isRegisterForm ? '/auth/login' : '/auth/register'}`}
+                href={`${isRegisterForm ? ROUTES.LOGIN : ROUTES.REGISTER}`}
                 className='active:opacity-30 transition-all duration-200 text-blue-600 border-b'
               >
                 {isRegisterForm ? 'login' : 'register'}
